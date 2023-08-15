@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Text Summarizer using ChatGPT",
+  "version": "1.0",
+  "description": "Summarizes selected text using ChatGPT",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "SmartSelectImage_2023-07-04-15-55-58.png"
+    }
+  },
+  "host_permissions": [
+    "http://localhost:3000/"
+  ]
+}
